@@ -23,7 +23,7 @@ class FilterChain {
     const processNextFilter = () => {
       if (index === chain.length) return callback();
       const filter = chain[index++];
-      const promise = filter(data);
+      const promise = filter.process(data);
       if (!promise) return callback();
       return promise.then(shouldContinue => {
         if (shouldContinue) return processNextFilter();

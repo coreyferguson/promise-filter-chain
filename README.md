@@ -4,7 +4,8 @@
 ## Summary
 
 A generic filter-chain with promises. Each filter returns a truthy value
-to continue the chain. Each filter can read and manipulate a `data` object.
+to continue the chain. Each filter can read and manipulate an object passed
+by reference as the first argument.
 
 ## Usage
 

@@ -5,6 +5,7 @@
   "main": "src/FilterChain.js",
   "scripts": {
     "debug": "./node_modules/.bin/mocha --recursive --watch --inspect --debug-brk test/spec",
+    "release": "node_modules/.bin/release-it",
     "test": "./node_modules/.bin/mocha --recursive test/spec",
     "watch": "./node_modules/.bin/mocha --recursive --watch test/spec"
   },
@@ -31,6 +32,7 @@
   "devDependencies": {
     "chai": "4.1.2",
     "chai-as-promised": "7.1.1",
+    "release-it": "^7.4.3",
     "sinon": "4.5.0",
     "sinon-chai": "3.0.0"
   }

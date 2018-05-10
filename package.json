@@ -1,6 +1,6 @@
 {
   "name": "promise-filter-chain",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A generic chain-of-responsibility pattern with promises.",
   "main": "src/FilterChain.js",
   "scripts": {

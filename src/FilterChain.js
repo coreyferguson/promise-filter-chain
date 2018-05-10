@@ -2,7 +2,7 @@
 class FilterChain {
 
   /**
-   * @param Array<String> chain list of filters
+   * @param Array<Function> chain list of filters
    */
   constructor(chain) {
     this.chain = chain;
@@ -12,6 +12,7 @@ class FilterChain {
   /**
    * @param Object data generic object to pass into each filter
    * @param Object filter object with a `process(data)` function
+   * @return Promise.<Object> the data originally passed in
    */
   wrapInChain(data, finalFilter) {
     data = data || {};
@@ -23,7 +24,7 @@ class FilterChain {
     const processNextFilter = () => {
       if (index === chain.length) return callback();
       const filter = chain[index++];
-      const promise = filter.process(data);
+      const promise = filter(data);
       if (!promise) return callback();
       return promise.then(shouldContinue => {
         if (shouldContinue) return processNextFilter();
